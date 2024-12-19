@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Карточки с анимацией</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #1a1a1a;
+        }
+
+        .carousel {
+            display: flex;
+            overflow: hidden;
+            width: 80%;
+            max-width: 900px;
+        }
+
+        .cards {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .card {
+            flex: 0 0 100%;
+            background-color: #a8d1ff;
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            color: black;
+            font-family: Arial, sans-serif;
+        }
+
+        .card h2 {
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 16px;
+        }
+
+        .controls {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .button {
+            width: 40px;
+            height: 40px;
+            background-color: white;
+            border: none;
+            border-radius: 50%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .button:hover {
+            background-color: #d1e8ff;
+        }
+    </style>
+</head>
+<body>
+    <div class="carousel">
+        <div class="cards">
+            <div class="card">
+                <h2>Курс по HTML</h2>
+                <p>Вёрстка веб страниц, от базового 'Hello World' до сложных анимаций на CSS</p>
+            </div>
+            <div class="card">
+                <h2>Курс по CSS</h2>
+                <p>Изучение стилей, макетов и анимаций, чтобы оживить ваши страницы</p>
+            </div>
+            <div class="card">
+                <h2>Курс по JavaScript</h2>
+                <p>Динамическое поведение сайтов и создание интерактивных элементов</p>
+            </div>
+        </div>
+    </div>
+    <div class="controls">
+        <button class="button" onclick="prevCard()">&#8249;</button>
+        <button class="button" onclick="nextCard()">&#8250;</button>
+    </div>
+
+    <script>
+        const cards = document.querySelector('.cards');
+        const totalCards = document.querySelectorAll('.card').length;
+        let currentIndex = 0;
+
+        function updateCarousel() {
+            const offset = -currentIndex * 100;
+            cards.style.transform = `translateX(${offset}%)`;
+        }
+
+        function prevCard() {
+            currentIndex = (currentIndex - 1 + totalCards) % totalCards;
+            updateCarousel();
+        }
+
+        function nextCard() {
+            currentIndex = (currentIndex + 1) % totalCards;
+            updateCarousel();
+        }
+    </script>
+</body>
+</html>
