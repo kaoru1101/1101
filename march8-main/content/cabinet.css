@@ -1,0 +1,159 @@
+@import url(https://myfonts.ru/myfonts?fonts=evolventa);
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Evolventa', sans-serif;
+    font-weight: 400;
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+  a{
+    text-decoration: none;
+  }
+  .wrapper{
+    width: 100%;
+    height: 100%;
+}
+header{
+    padding: 25px 0;
+}
+header .logo{
+    text-transform: uppercase;
+    font-size: 29px;
+    font-style: normal;
+    font-weight: 700;
+}
+header nav{
+    float: right;
+    width: 50%;
+}
+header nav ul{
+    position: relative;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    font-style: normal;
+    font-weight: 400;
+    z-index: 2;
+}
+header nav ul li {
+    display: inline-block;
+}
+header nav ul li a{
+    color: #fff;
+}
+header nav ul li.active::after{
+    content: "";
+    display: block;
+    width: 40px;
+    height: 5px;
+    background: #dc7000;
+    border-radius: 10px;
+    position: relative;
+    top: 5px;
+    left: -15px;
+
+}
+header nav ul li:not(.active):not(.btn) a:hover{
+    border-bottom: 5px solid #dc7000;
+}
+header nav ul li.btn a{
+    background: #fa9021;
+    padding: 9px 16px;
+    border-radius: 5px;
+    transition: all 500ms ease;
+}
+header nav ul li.btn a:hover{
+    background:#a02604 ;
+}
+  
+.hero--info{
+  padding-top: 200px;
+}
+.hero h1{
+  font-size: 48px;
+}
+.hero p{
+  max-width: 410px;
+  font-size: 20px;
+}
+.hero img{
+  position: absolute;
+  right: 0;
+  top: 200px;
+  margin-right: 300px;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap; /* Чтобы карточки переносились на следующую строку */
+    justify-content: space-between; /* Пространство между карточками */
+    gap: 20px; /* Расстояние между карточками */
+    padding: 20px;
+    margin-top: 200px;
+  }
+  
+.card {
+    background-color: #808080; /* Серый фон карточки */
+    color: #fff; /* Белый текст */
+    padding-left: 20px; /* Отступы внутри карточки */
+    border-radius: 10px; /* Сглаженные углы */
+    width: calc(33.333% - 20px); /* Карточка занимает треть ширины */
+    box-sizing: border-box; /* Учитывает отступы в ширину */
+    display: flex; /* Используем Flexbox для управления содержимым */
+    flex-direction: column; /* Располагаем элементы вертикально */
+    justify-content: space-between; /* Равномерно распределяем пространство */
+    align-items: flex-start; /* Выравниваем текст по левому краю */
+    height: 250px; /* Фиксируем высоту карточки */
+  }
+  
+  .card span {
+    display: block; /* Для отдельных строк */
+    font-size: 16px; /* Размер текста */
+    padding-top: 16px;
+  }
+  
+  .card .title {
+    font-weight: bold; /* Выделяем заголовок */
+    font-size: 18px; /* Размер заголовка */
+    padding-top: 20px;
+  }
+  
+  .card .price {
+    margin-top: auto; /* Отодвигаем текст вниз */
+    font-weight: normal; /* Обычный стиль текста */
+    padding-bottom: 20px;
+  }
+
+  footer{
+    padding-top: 100px;
+  }
+  footer .blocks{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+  }
+  
+  footer .blocks p{
+    width: 300px;
+    margin: 15px 0;
+  }
+  footer .blocks h4{
+    margin-left: 35px;
+    border-bottom: 1px solid gray;
+    font-size: 20px;
+    font-weight: 400;
+  }
+  footer .blocks ul{
+    list-style: none;
+    margin-top: 15px;
+  }
+  footer .blocks ul li{
+    margin: 10px 0;
+    padding-left: 0;
+  }
+  .wdnames{
+  padding: 10px 0;
+  text-align: center;
+  } 
+  
